@@ -74,28 +74,19 @@ export default class Weather extends React.Component {
         return <div className='weatherBox'>
 
 
-                <seccion className = 'principal'>
-                    <section className = 'date'>{this.state.currentDate}</section>
-                    <section className='climate-status'>{this.state.climateStatus}</section>
-                    <section className='climate-value'>{this.state.temperatureStr}</section>
-                    <img src={this.state.icon} alt='weather icon'></img>
-                    <section className='request-time'>{this.state.lastRequestTime} hs</section>
-
-
-                </seccion>
-
+            <seccion className = 'principal'>
+                <section className = 'date'>{this.state.currentDate}</section>
+                <section className='climate-status'>{this.state.climateStatus}</section>
+                <section className='climate-value'>{this.state.temperatureStr}</section>
+                <img src={this.state.icon} alt='weather icon'></img>
+                <section className='request-time'>{this.state.lastRequestTime} hs</section>
+            </seccion>
             <section className='detail-information'>
                 <section className='fecha'>{this.state.date}</section>
                 <section className='feels-like'>Feels like: {this.state.tempFeel}</section>
                 <section className='pressure'>Pressure: {this.state.pressure} hPa</section>
                 <section className='humidity'>Humidity: {this.state.humidity}%</section>
-                <section className='speed'> Wind: {this.state.speed} km/h</section>
-
-
-                
-            </section>
-            <section className='main-information'>
-                <section className='city-name'>{this.state.city}</section>
+                <section className='speed'> Wind: {this.state.speed} km/h</section>      
             </section>
 
             
