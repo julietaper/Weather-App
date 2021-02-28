@@ -87,15 +87,8 @@ export default class Weather extends React.Component {
                 <section className='feels-like'>Feels like: {this.state.tempFeel}</section>
                 <section className='pressure'>Pressure: {this.state.pressure} hPa</section>
                 <section className='humidity'>Humidity: {this.state.humidity}%</section>
-                <section className='speed'> Wind: {this.state.speed} km/h</section>
-
-                
-            </section>
-            <section className='main-information'>
-                <section className='city-name'>{this.state.city}</section>
-            </section>
-
-            
+                <section className='speed'> Wind: {this.state.speed} km/h</section>     
+            </section>           
         </div>
 
     }
