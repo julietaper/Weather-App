@@ -28,7 +28,7 @@ export default class Weather extends React.Component {
             newState.humidity = weatherData.main.humidity;
             newState.speed = weatherData.wind.speed;
             newState.icon =
-            `http://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png`;
+                `http://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png`;
             newState.lastRequestTime = this.getTime();
             newState.currentDate = this.getDate();
 
@@ -72,6 +72,8 @@ export default class Weather extends React.Component {
     render() {
    
         return <div className='weatherBox'>
+
+
                 <seccion className = 'principal'>
                     <section className = 'date'>{this.state.currentDate}</section>
                     <section className='climate-status'>{this.state.climateStatus}</section>
@@ -87,8 +89,16 @@ export default class Weather extends React.Component {
                 <section className='feels-like'>Feels like: {this.state.tempFeel}</section>
                 <section className='pressure'>Pressure: {this.state.pressure} hPa</section>
                 <section className='humidity'>Humidity: {this.state.humidity}%</section>
-                <section className='speed'> Wind: {this.state.speed} km/h</section>     
-            </section>           
+                <section className='speed'> Wind: {this.state.speed} km/h</section>
+
+
+                
+            </section>
+            <section className='main-information'>
+                <section className='city-name'>{this.state.city}</section>
+            </section>
+
+            
         </div>
 
     }
