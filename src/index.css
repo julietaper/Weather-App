@@ -1,10 +1,10 @@
 .App {
   text-align: center;
+
+
+  background: url(./img/montevideo2.jpg);
+  position: relative;
 }
-
-
-
-
 
 body {
   margin: 0;
@@ -19,3 +19,65 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+
+.weatherBox {
+  display: flex;
+  font-family: Verdana;
+  position: relative;
+  background-color: rgba(143, 143, 138, 0.5);
+  color: rgb(12, 11, 11);
+  padding: 50px;
+  background-position: right;
+  flex-direction: row;
+  justify-content: space-between;
+  line-height: 200%;
+  text-align: left;
+  margin-bottom: 10%;
+  margin-top: auto;
+
+}
+
+.feels-like{
+  margin-top: 10%;
+}
+
+.principal{
+  background-color: rgba(88, 86, 86, 0.5);
+  padding: 25px;
+  padding-bottom: 20px;
+  text-align: center;
+  margin-right: 60px;
+  line-height: 150%;
+
+}
+
+.detail-information{
+  margin-top: 5%;
+}
+
+.date{
+  font-size: 16px;
+  text-align: center;
+}
+
+.request-time{
+  font-size: 20px;
+  border-radius: 10px;
+  text-align: center;
+  font-family: sans-serif;
+}
+
+.climate-status{
+  font-family: Arial;
+  font-size: 50%;
+}
+
+.climate-value{
+  font-family: Arial;
+  font-size: 250%;
+
+}
+
+

@@ -1,5 +1,8 @@
 .App {
   text-align: center;
+  background: url(./img/montevideo2.jpg);
+
+
 }
 
 .App-logo {
@@ -22,6 +25,30 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  background: url(./img/montevideo2.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+
+
+}
+
+.titulo{
+  font-family: Arial;
+  color: rgb(2, 2, 2);
+  margin-bottom: 5%;
+  position: relative;
+  margin-top: 5%;
+
+}
+
+.App-header:before{
+  content:'';
+	position: absolute;
+  top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: rgba(63, 60, 60, 0.6);
 }
 
 .App-link {

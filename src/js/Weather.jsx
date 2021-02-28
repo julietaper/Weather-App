@@ -18,7 +18,7 @@ export default class Weather extends React.Component {
 
     updateState(weatherData) {
         let newState = this.state;
-        const celsiusUnicode = '\u2103';
+        const celsiusUnicode = '\u00B0';
         try {
             newState.temperature = this.toCelsius(weatherData.main.temp);
             newState.temperatureStr = `${this.state.temperature}${celsiusUnicode}`;
@@ -27,12 +27,30 @@ export default class Weather extends React.Component {
             newState.pressure = weatherData.main.pressure;
             newState.humidity = weatherData.main.humidity;
             newState.speed = weatherData.wind.speed;
+            newState.icon =
+            `http://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png`;
+            newState.lastRequestTime = this.getTime();
+            newState.currentDate = this.getDate();
 
         } catch (e) {
             console.log(e);
         }
         this.setState(newState);
     }
+
+    getTime() {
+        const currentDate = new Date();
+        const timeOfDay = `${currentDate.getHours()}:${currentDate.getMinutes()}`;
+        return timeOfDay;
+    }
+
+    getDate(){
+        let meses = new Array ("January","February","March","April","May","June","July","August","September","October","November","December");
+        let diasSemana = new Array("Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday");
+        let f=new Date();
+        return(diasSemana[f.getDay()] + ", " + meses[f.getMonth()] + " " + f.getDate()  + ","+ f.getFullYear());
+    }
+    
 
     toCelsius(temp) {
         let num = temp - 273.15;
@@ -52,21 +70,33 @@ export default class Weather extends React.Component {
     }
 
     render() {
-        return <div className='weather-box'>
+   
+        return <div className='weatherBox'>
+                <seccion className = 'principal'>
+                    <section className = 'date'>{this.state.currentDate}</section>
+                    <section className='climate-status'>{this.state.climateStatus}</section>
+                    <section className='climate-value'>{this.state.temperatureStr}</section>
+                    <img src={this.state.icon} alt='weather icon'></img>
+                    <section className='request-time'>{this.state.lastRequestTime} hs</section>
+
+
+                </seccion>
+
             <section className='detail-information'>
-                <section className='feels-like'>sensacion termica: {this.state.tempFeel}</section>
-                <section className='pressure'>presion atmosferica: {this.state.pressure}</section>
-                <section className='humidity'>humedad: {this.state.humidity}%</section>
-             
+                <section className='fecha'>{this.state.date}</section>
+                <section className='feels-like'>Feels like: {this.state.tempFeel}</section>
+                <section className='pressure'>Pressure: {this.state.pressure} hPa</section>
+                <section className='humidity'>Humidity: {this.state.humidity}%</section>
+                <section className='speed'> Wind: {this.state.speed} km/h</section>
+
+                
             </section>
             <section className='main-information'>
-                <section className='climate-value'>Temperatura: {this.state.temperatureStr}</section>
-                <section className='climate-status'>{this.state.climateStatus}</section>
-                <section className='speed'> viento: {this.state.speed}</section>
-
                 <section className='city-name'>{this.state.city}</section>
             </section>
+
             
         </div>
+
     }
 }
